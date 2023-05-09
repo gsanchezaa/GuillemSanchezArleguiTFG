@@ -4,6 +4,8 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
+using HandAQUS.Classes.API;
+using HandAQUS.Forms;
 using HandAQUS.Properties;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -43,6 +45,7 @@ namespace HandAQUS
         private readonly WacomManager _wacomManager;
 
         private TobiiPROGlasses3 tobiiPROGlasses;
+        private PupilCoreForm pupilCore;
         private Image imageBackgroundTest;
         private string svcPath;
         private string pathBackgroundTestImage;
@@ -55,6 +58,7 @@ namespace HandAQUS
             _logger.Info("HandAQUS started.");
             _wacomManager = new WacomManager(scribblePanel, stateLabel);
             tobiiPROGlasses = new TobiiPROGlasses3();
+            pupilCore = new PupilCoreForm();
             imageBackgroundTest = Resources.handwiriting_test;
         }
 
@@ -739,15 +743,20 @@ Do you want to continue?",
             //TFG
             //opens Tobii Pro Glasses 3 Forms 
             //in case button is clicked and glasses 3 window form is minimized, to maximize it
+            
             if (this.tobiiPROGlasses.WindowState == FormWindowState.Minimized)
             {
                 this.tobiiPROGlasses.WindowState = FormWindowState.Maximized;
             }
+            
             this.tobiiPROGlasses.Show();
             this.tobiiPROGlasses.TopMost = true;
+
+            //  this.pupilCore.Show();
+            //  this.pupilCore.TopMost = true;
         }
 
-        
+
         private void btnChangeBackgroundImage_Click(object sender, EventArgs e)
         {
             //TFG
@@ -850,6 +859,16 @@ Do you want to continue?",
             //TFG
             //Method called from Tobii Glasses 3 Forms, to save writing data when gaze data is saved.
             saveSVCFile();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            if (this.pupilCore.WindowState == FormWindowState.Minimized)
+            {
+                this.pupilCore.WindowState = FormWindowState.Maximized;
+            }
+            this.pupilCore.Show();
+            this.pupilCore.TopMost = true;
         }
     }
 }

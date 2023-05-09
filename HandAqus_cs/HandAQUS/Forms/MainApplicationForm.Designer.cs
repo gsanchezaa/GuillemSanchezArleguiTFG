@@ -44,6 +44,7 @@
             this.clearButton = new System.Windows.Forms.ToolStripMenuItem();
             this.switchModeButton = new System.Windows.Forms.ToolStripMenuItem();
             this.debugButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.stateLabel = new System.Windows.Forms.Label();
             exitButton = new System.Windows.Forms.ToolStripMenuItem();
             this.scribblePanel.SuspendLayout();
@@ -77,7 +78,7 @@
             this.scribblePanel.Margin = new System.Windows.Forms.Padding(5);
             this.scribblePanel.Name = "scribblePanel";
             this.scribblePanel.Padding = new System.Windows.Forms.Padding(5);
-            this.scribblePanel.Size = new System.Drawing.Size(1920, 769);
+            this.scribblePanel.Size = new System.Drawing.Size(1386, 769);
             this.scribblePanel.TabIndex = 0;
             // 
             // lines_button_remove
@@ -112,6 +113,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnChangeBackgroundImage,
             this.btnTobbiGlasses,
+            this.toolStripMenuItem1,
             this.addFolderButton,
             this.objectInfo,
             this.autoSaveButton,
@@ -127,6 +129,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(98, 690);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // btnChangeBackgroundImage
             // 
@@ -148,7 +151,7 @@
             this.btnTobbiGlasses.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnTobbiGlasses.Name = "btnTobbiGlasses";
             this.btnTobbiGlasses.Size = new System.Drawing.Size(91, 96);
-            this.btnTobbiGlasses.Text = "Glasses";
+            this.btnTobbiGlasses.Text = "Tobii";
             this.btnTobbiGlasses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTobbiGlasses.Click += new System.EventHandler(this.btnTobbiGlasses_Click);
             // 
@@ -257,6 +260,17 @@
             this.debugButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.debugButton.Click += new System.EventHandler(this.debugButton_Click);
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Bold);
+            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
+            this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(91, 96);
+            this.toolStripMenuItem1.Text = "PupilCore";
+            this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            // 
             // stateLabel
             // 
             this.stateLabel.AutoSize = true;
@@ -274,7 +288,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(219)))), ((int)(((byte)(215)))), ((int)(((byte)(204)))));
-            this.ClientSize = new System.Drawing.Size(1904, 690);
+            this.ClientSize = new System.Drawing.Size(1370, 690);
             this.Controls.Add(this.stateLabel);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.scribblePanel);
@@ -311,6 +325,7 @@
         private System.Windows.Forms.Button lines_button_remove;
         private System.Windows.Forms.ToolStripMenuItem btnTobbiGlasses;
         private System.Windows.Forms.ToolStripMenuItem btnChangeBackgroundImage;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
     }
 }
 
