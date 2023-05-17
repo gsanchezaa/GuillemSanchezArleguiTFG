@@ -37,11 +37,20 @@ namespace HandAQUS.Classes.API
         //A method that plays a sound when callibration petiton for the glasses is complete.
         public void callibrate()
         {
-            // start calibration
+            // start callibration
             pupil_remote.SendFrame(Encoding.UTF8.GetBytes("C"));
             Console.WriteLine(Encoding.UTF8.GetString(pupil_remote.ReceiveFrameBytes()));
 
         }
+        
+        public void stopCallibration()
+        {
+            // stop callibration
+            pupil_remote.SendFrame(Encoding.UTF8.GetBytes("c"));
+            Console.WriteLine(Encoding.UTF8.GetString(pupil_remote.ReceiveFrameBytes()));
+
+        }
+
 
         //A method that plays a sound.
         private void playSound()

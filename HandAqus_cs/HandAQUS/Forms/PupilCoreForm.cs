@@ -186,10 +186,12 @@ namespace HandAQUS.Forms
                     //    btnGazeOFF.Enabled = false;
                     //pictureBox1.Enabled = false;
                     //     btnAddTask.Enabled = false;
+               //     btnStopCallibrate.Enabled = false;
                     break;
                 case "find":
                     btnCallibrate.Enabled = true;
                     //btnFindGlasses.Enabled = false;
+                    button1.Enabled = false;
                     // pictureBox1.Enabled = true;
                     LblForButtons.Text = "Glasses Found. Next Step: CALLIBRATE.";
                     break;
@@ -198,11 +200,20 @@ namespace HandAQUS.Forms
                     //    btnCancelRec.Enabled = true;
                     //     btnGazeOFF.Enabled = true;
                     btnCallibrate.Enabled = false;
+               //     btnStopCallibrate.Enabled = true;
                     LblForButtons.Text = "Callibrated. Next Step: START Recording";
+                    break;
+                case "stopCalibration":
+             //       btnStopCallibrate.Enabled = false;
+                    btnCallibrate.Enabled = true;
+                    btnSTART.Enabled = true;
+                    btnSTOP.Enabled = false;
+                    LblForButtons.Text = "Callibration Stopped";
                     break;
                 case "start":
                     btnSTOP.Enabled = true;
                     btnCallibrate.Enabled = false;
+                //    btnStopCallibrate.Enabled = false;
                     btnSTART.Enabled = false;
                     //  btnGazeOFF.Enabled = false;
                     //  btnAddTask.Enabled = true;
@@ -212,9 +223,10 @@ namespace HandAQUS.Forms
                 case "stop":
                     //    btnSaveRecording.Enabled = true;
                     btnSTOP.Enabled = false;
+                    btnSTART.Enabled = true;
                     //    btnCancelRec.Enabled = false;
                     //   btnAddTask.Enabled = false;
-                    LblForButtons.Text = "Recording Stopped. Next Step: SAVE Recording";
+                    LblForButtons.Text = "Recording Stopped and Saved";
                     break;
 
                 case "saveStarts":
@@ -275,21 +287,27 @@ namespace HandAQUS.Forms
 
         private void btnSTART_Click(object sender, EventArgs e)
         {
-            //  PupilCoreObject.StartRecording(); // posar excepcions (quan no estan connectades, es queda aquí atrapat
+            PupilCoreObject.StartRecording(); // posar excepcions (quan no estan connectades, es queda aquí atrapat
             disableButtons("start");
         }
 
         private void btnSTOP_Click(object sender, EventArgs e)
         {
-            //  PupilCoreObject.StopRecording(); // posar excepcions (quan no estan connectades, es queda aquí atrapat
+            PupilCoreObject.StopRecording(); // posar excepcions (quan no estan connectades, es queda aquí atrapat
             disableButtons("stop");
             //quan s'acaba es guarda automàticament
         }
 
         private void btnCallibrate_Click(object sender, EventArgs e)
         {
-           // PupilCoreObject.callibrate(); // posar excepcions (quan no estan connectades, es queda aquí atrapat
+            PupilCoreObject.callibrate(); // posar excepcions (quan no estan connectades, es queda aquí atrapat
             disableButtons("callibrate");
+        }
+
+        private void btnStopCallibrate_Click(object sender, EventArgs e)
+        {
+            PupilCoreObject.stopCallibration();
+            disableButtons("stopCalibration");
         }
 
         /*
