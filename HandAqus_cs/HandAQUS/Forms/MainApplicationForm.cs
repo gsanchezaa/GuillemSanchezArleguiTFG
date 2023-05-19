@@ -46,6 +46,7 @@ namespace HandAQUS
 
         private TobiiPROGlasses3 tobiiPROGlasses;
         private PupilCoreForm pupilCore;
+        private Glasses glasses;
         private Image imageBackgroundTest;
         private string svcPath;
         private string pathBackgroundTestImage;
@@ -59,6 +60,7 @@ namespace HandAQUS
             _wacomManager = new WacomManager(scribblePanel, stateLabel);
             tobiiPROGlasses = new TobiiPROGlasses3();
             pupilCore = new PupilCoreForm();
+            glasses = new Glasses();
             imageBackgroundTest = Resources.handwiriting_test;
         }
 
@@ -744,12 +746,12 @@ Do you want to continue?",
             //opens Tobii Pro Glasses 3 Forms 
             //in case button is clicked and glasses 3 window form is minimized, to maximize it
             
-            if (this.tobiiPROGlasses.WindowState == FormWindowState.Minimized)
+            if (this.glasses.WindowState == FormWindowState.Minimized)
             {
-                this.tobiiPROGlasses.WindowState = FormWindowState.Maximized;
+                this.glasses.WindowState = FormWindowState.Maximized;
             }
-            this.tobiiPROGlasses.Show();
-            this.tobiiPROGlasses.TopMost = true;
+            this.glasses.Show();
+            this.glasses.TopMost = true;
         }
 
 
@@ -855,11 +857,6 @@ Do you want to continue?",
             //TFG
             //Method called from Tobii Glasses 3 Forms, to save writing data when gaze data is saved.
             saveSVCFile();
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-            
         }
 
         private void toolStripMenuItem1_Click(object sender, EventArgs e)

@@ -129,6 +129,12 @@
     <Compile Include="Classes\API\PupilCoreAPI.cs" />
     <Compile Include="Classes\API\Recording.cs" />
     <Compile Include="Classes\AutoClosingMessageBox.cs" />
+    <Compile Include="Forms\Glasses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Glasses.Designer.cs">
+      <DependentUpon>Glasses.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\MainApplicationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
       <DependentUpon>TobiiPROGlasses3.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\WacomManager.cs" />
+    <EmbeddedResource Include="Forms\Glasses.resx">
+      <DependentUpon>Glasses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\PupilCoreForm.resx">
       <DependentUpon>PupilCoreForm.cs</DependentUpon>
     </EmbeddedResource>

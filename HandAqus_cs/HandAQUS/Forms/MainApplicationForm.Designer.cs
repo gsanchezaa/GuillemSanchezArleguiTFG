@@ -36,7 +36,6 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.btnChangeBackgroundImage = new System.Windows.Forms.ToolStripMenuItem();
             this.btnTobbiGlasses = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.addFolderButton = new System.Windows.Forms.ToolStripMenuItem();
             this.objectInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.autoSaveButton = new System.Windows.Forms.ToolStripMenuItem();
@@ -113,7 +112,6 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnChangeBackgroundImage,
             this.btnTobbiGlasses,
-            this.toolStripMenuItem1,
             this.addFolderButton,
             this.objectInfo,
             this.autoSaveButton,
@@ -129,7 +127,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(98, 690);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // btnChangeBackgroundImage
             // 
@@ -151,21 +148,9 @@
             this.btnTobbiGlasses.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.btnTobbiGlasses.Name = "btnTobbiGlasses";
             this.btnTobbiGlasses.Size = new System.Drawing.Size(91, 96);
-            this.btnTobbiGlasses.Text = "Tobii";
+            this.btnTobbiGlasses.Text = "Glasses";
             this.btnTobbiGlasses.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnTobbiGlasses.Click += new System.EventHandler(this.btnTobbiGlasses_Click);
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Bold);
-            this.toolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.toolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripMenuItem1.Image")));
-            this.toolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(91, 96);
-            this.toolStripMenuItem1.Text = "PupilCore";
-            this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // addFolderButton
             // 
@@ -325,7 +310,6 @@
         private System.Windows.Forms.Button lines_button_remove;
         private System.Windows.Forms.ToolStripMenuItem btnTobbiGlasses;
         private System.Windows.Forms.ToolStripMenuItem btnChangeBackgroundImage;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem saveButton;
     }
 }
