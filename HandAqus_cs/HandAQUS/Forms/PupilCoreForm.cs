@@ -304,12 +304,19 @@ namespace HandAQUS.Forms
             disableButtons("callibrate");
         }
 
-        private void btnStopCallibrate_Click(object sender, EventArgs e)
+        private void PupilCore_FormClosing(object sender, FormClosingEventArgs e)
         {
-            PupilCoreObject.stopCallibration();
-            disableButtons("stopCalibration");
+            //Method to control when form has to close, of maximize, minimize.
+            this.Hide();
+            e.Cancel = true;
+            //   btnFindGlasses.Enabled = true;
+            button1.Enabled = true;
+            btnCallibrate.Enabled = false;
+        //    btnCancelRec.Enabled = false;
+        //    btnSaveRecording.Enabled = false;
+            btnSTART.Enabled = false;
+            btnSTOP.Enabled = false;
         }
-
         /*
         private void btnSaveRecording_Click(object sender, EventArgs e)//, string dest_dir, string identifier)
         {

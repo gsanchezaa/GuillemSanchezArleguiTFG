@@ -40,12 +40,12 @@
             this.addFolderButton = new System.Windows.Forms.ToolStripMenuItem();
             this.objectInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.autoSaveButton = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveButton = new System.Windows.Forms.ToolStripMenuItem();
             this.loadButton = new System.Windows.Forms.ToolStripMenuItem();
             this.clearButton = new System.Windows.Forms.ToolStripMenuItem();
             this.switchModeButton = new System.Windows.Forms.ToolStripMenuItem();
             this.debugButton = new System.Windows.Forms.ToolStripMenuItem();
             this.stateLabel = new System.Windows.Forms.Label();
-            this.saveButton = new System.Windows.Forms.ToolStripMenuItem();
             exitButton = new System.Windows.Forms.ToolStripMenuItem();
             this.scribblePanel.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -165,6 +165,7 @@
             this.toolStripMenuItem1.Size = new System.Drawing.Size(91, 96);
             this.toolStripMenuItem1.Text = "PupilCore";
             this.toolStripMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // addFolderButton
             // 
@@ -202,6 +203,18 @@
             this.autoSaveButton.Text = "AutoSave";
             this.autoSaveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.autoSaveButton.Click += new System.EventHandler(this.autoSaveButton_Click);
+            // 
+            // saveButton
+            // 
+            this.saveButton.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Bold);
+            this.saveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
+            this.saveButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(91, 96);
+            this.saveButton.Text = "Save As..";
+            this.saveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // loadButton
             // 
@@ -269,18 +282,6 @@
             this.stateLabel.Size = new System.Drawing.Size(294, 23);
             this.stateLabel.TabIndex = 2;
             this.stateLabel.Text = "Folder for autosave was not selcted";
-            // 
-            // saveButton
-            // 
-            this.saveButton.Font = new System.Drawing.Font("Sitka Text", 14.25F, System.Drawing.FontStyle.Bold);
-            this.saveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.saveButton.Image = ((System.Drawing.Image)(resources.GetObject("saveButton.Image")));
-            this.saveButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(91, 96);
-            this.saveButton.Text = "Save As..";
-            this.saveButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // HandAQUS
             // 

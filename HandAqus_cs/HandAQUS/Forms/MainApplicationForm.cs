@@ -748,12 +748,8 @@ Do you want to continue?",
             {
                 this.tobiiPROGlasses.WindowState = FormWindowState.Maximized;
             }
-            
             this.tobiiPROGlasses.Show();
             this.tobiiPROGlasses.TopMost = true;
-
-            //  this.pupilCore.Show();
-            //  this.pupilCore.TopMost = true;
         }
 
 
@@ -863,6 +859,11 @@ Do you want to continue?",
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
+            
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
             if (this.pupilCore.WindowState == FormWindowState.Minimized)
             {
                 this.pupilCore.WindowState = FormWindowState.Maximized;
@@ -870,5 +871,6 @@ Do you want to continue?",
             this.pupilCore.Show();
             this.pupilCore.TopMost = true;
         }
+
     }
 }

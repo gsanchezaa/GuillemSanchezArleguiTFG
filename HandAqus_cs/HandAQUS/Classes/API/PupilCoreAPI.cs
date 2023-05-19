@@ -25,7 +25,8 @@ namespace HandAQUS.Classes.API
 
             // create a new Pupil Remote client
             pupil_remote = new RequestSocket();
-            pupil_remote.Connect("tcp://127.0.0.1:50020");
+            pupil_remote.Connect("tcp://127.0.0.1:50020"); 
+          //  pupil_remote.Connect("tcp://192.168.200.1:50020"); //remotely 
         }
 
         //A method that plays a sound if glasses are connected to the computer device.
