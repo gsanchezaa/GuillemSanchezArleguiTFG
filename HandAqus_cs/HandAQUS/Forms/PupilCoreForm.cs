@@ -14,6 +14,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json.Linq;
 using HandAQUS.Classes.API;
+using NetMQ;
 
 namespace HandAQUS.Forms
 {
@@ -31,10 +32,10 @@ namespace HandAQUS.Forms
         {
             InitializeComponent();
             disableButtons("initialize");
-            this.MaximumSize = new System.Drawing.Size(1000, 800);//que fa això? (668,412). Programa peta quan es tanca i es torna a obrir PupilCoreForm
+            this.MaximumSize = new System.Drawing.Size(1000, 800);//que fa això? (668,412).
         }
 
-        private void btnFindGlasses_Click(object sender, EventArgs e)//nom del botó el mateix?
+        private void BBBFindGlasses_Click(object sender, EventArgs e)//nom del botó el mateix?
         {
             //Method for button "Find Glasses" that initialises the PupilCore object.
             try
@@ -191,9 +192,9 @@ namespace HandAQUS.Forms
                 case "find":
                     btnCallibrate.Enabled = true;
                     //btnFindGlasses.Enabled = false;
-                    button1.Enabled = false;
+                    btnFindGlasses.Enabled = false;
                     // pictureBox1.Enabled = true;
-                    LblForButtons.Text = "Glasses Found. Next Step: CALLIBRATE.";
+                    LblForButtons.Text = "Glasses Found. Next Step: CALIBRATE.";
                     break;
                 case "callibrate":
                     btnSTART.Enabled = true;
@@ -277,17 +278,39 @@ namespace HandAQUS.Forms
     */
 
         //"Find Glasses"
-        private void button1_Click(object sender, EventArgs e)
+        private void btnFindGlasses_Click(object sender, EventArgs e)
         {
-            //Method for button "Find Glasses" that initialises the PupilCore object.
             PupilCoreObject = new PupilCoreAPI();
             disableButtons("find");
-            //si no estan connectades les ulleres, hauria de dir algo i no poder seguir (ara mateix segueix com si res)
+            /*
+              try
+              {
+                         PupilCoreObject = new PupilCoreAPI();
+                // disableButtons("find");
+                Console.WriteLine("Hello");
+
+            }
+            catch (NetMQ.InvalidException ex)
+              {
+                Console.WriteLine("Inside catch");
+
+                Console.WriteLine("An error occurred: " + ex.GetType().Name + " - " + ex.Message);
+
+                MessageBox.Show(
+                      @"Glasses Not connected! Please connect them via WIFI.",
+                      @"Warning",
+                      MessageBoxButtons.OK,
+                      MessageBoxIcon.Warning);
+                  Debug.WriteLine("Message :{0} ", ex.Message);
+                  disableButtons("find"); // aquí no pot anar això
+
+              }
+            */
         }
 
         private void btnSTART_Click(object sender, EventArgs e)
         {
-            PupilCoreObject.StartRecording(); // posar excepcions (quan no estan connectades, es queda aquí atrapat
+            PupilCoreObject.StartRecording();
             disableButtons("start");
         }
 
@@ -300,8 +323,18 @@ namespace HandAQUS.Forms
 
         private void btnCallibrate_Click(object sender, EventArgs e)
         {
-            PupilCoreObject.callibrate(); // posar excepcions (quan no estan connectades, es queda aquí atrapat
-            disableButtons("callibrate");
+            if (PupilCoreObject == null) // no es mai null
+            {
+                Console.WriteLine("essss nuuuuull ");
+                return;
+            }
+            else
+            {
+                Console.WriteLine("buuuuuuuuuu ");
+                PupilCoreObject.callibrate(); // posar excepcions (quan no estan connectades, es queda aquí atrapat
+                disableButtons("callibrate");
+            }
+            
         }
 
         private void PupilCore_FormClosing(object sender, FormClosingEventArgs e)
@@ -310,12 +343,13 @@ namespace HandAQUS.Forms
             this.Hide();
             e.Cancel = true;
             //   btnFindGlasses.Enabled = true;
-            button1.Enabled = true;
+            btnFindGlasses.Enabled = true;
             btnCallibrate.Enabled = false;
         //    btnCancelRec.Enabled = false;
         //    btnSaveRecording.Enabled = false;
             btnSTART.Enabled = false;
             btnSTOP.Enabled = false;
+            this.LblForButtons.Text = "FIRST STEP: please press FIND GLASSES";
         }
         /*
         private void btnSaveRecording_Click(object sender, EventArgs e)//, string dest_dir, string identifier)

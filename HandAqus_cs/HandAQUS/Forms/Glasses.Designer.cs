@@ -82,11 +82,12 @@
             this.ClientSize = new System.Drawing.Size(211, 165);
             this.Controls.Add(this.menuStrip1);
             this.Name = "Glasses";
-            this.Text = "Form1";
+            this.Text = "Glasses";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Glasses_FormClosing);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
         }
 
         #endregion

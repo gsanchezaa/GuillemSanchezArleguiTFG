@@ -1,4 +1,6 @@
-﻿namespace HandAQUS.Forms
+﻿using HandAQUS.Properties;
+
+namespace HandAQUS.Forms
 {
     partial class PupilCoreForm
     {
@@ -28,9 +30,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PupilCoreForm));
             this.btnCallibrate = new System.Windows.Forms.Button();
             this.LblForButtons = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFindGlasses = new System.Windows.Forms.Button();
             this.btnSTOP = new System.Windows.Forms.Button();
             this.btnSTART = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -46,7 +49,7 @@
             this.btnCallibrate.Name = "btnCallibrate";
             this.btnCallibrate.Size = new System.Drawing.Size(150, 62);
             this.btnCallibrate.TabIndex = 22;
-            this.btnCallibrate.Text = "CALLIBRATE";
+            this.btnCallibrate.Text = "CALIBRATE";
             this.btnCallibrate.UseVisualStyleBackColor = false;
             this.btnCallibrate.Click += new System.EventHandler(this.btnCallibrate_Click);
             // 
@@ -65,19 +68,19 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(205, 62);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 62);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "FIND GLASSES";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnFindGlasses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
+            this.btnFindGlasses.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFindGlasses.Font = new System.Drawing.Font("Sitka Text", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFindGlasses.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnFindGlasses.Location = new System.Drawing.Point(205, 62);
+            this.btnFindGlasses.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnFindGlasses.Name = "button1";
+            this.btnFindGlasses.Size = new System.Drawing.Size(150, 62);
+            this.btnFindGlasses.TabIndex = 24;
+            this.btnFindGlasses.Text = "FIND GLASSES";
+            this.btnFindGlasses.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnFindGlasses.UseVisualStyleBackColor = false;
+            this.btnFindGlasses.Click += new System.EventHandler(this.btnFindGlasses_Click);
             // 
             // btnSTOP
             // 
@@ -124,7 +127,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnCallibrate);
             this.Controls.Add(this.LblForButtons);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFindGlasses);
             this.Controls.Add(this.btnSTOP);
             this.Controls.Add(this.btnSTART);
             this.Name = "PupilCoreForm";
@@ -132,12 +135,13 @@
             this.ResumeLayout(false);
             this.PerformLayout();
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.PupilCore_FormClosing);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
         }
 
         #endregion
         private System.Windows.Forms.Button btnCallibrate;
         private System.Windows.Forms.Label LblForButtons;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFindGlasses;
         private System.Windows.Forms.Button btnSTOP;
         private System.Windows.Forms.Button btnSTART;
     }

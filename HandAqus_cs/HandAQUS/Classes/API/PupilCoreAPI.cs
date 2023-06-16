@@ -24,9 +24,28 @@ namespace HandAQUS.Classes.API
             //findGlasses();
 
             // create a new Pupil Remote client
-            pupil_remote = new RequestSocket();
-            pupil_remote.Connect("tcp://127.0.0.1:50020"); 
-          //  pupil_remote.Connect("tcp://192.168.200.1:50020"); //remotely 
+            //   pupil_remote = new RequestSocket();
+            //  pupil_remote.Connect("tcp://127.0.0.1:50020");
+            //  pupil_remote.Connect("tcp://192.168.200.1:50020"); //remotely 
+            Console.WriteLine("hello 11 api");
+
+
+            try
+            {
+                pupil_remote = new RequestSocket();
+                pupil_remote.Connect("tcp://127.0.0.1:50020");
+                Console.WriteLine("hello api");
+
+            }
+            catch (NetMQException ex)//System.Net.WebException (provar system.net.X
+            {
+                Console.WriteLine("ha trobat excepció");
+
+                Console.WriteLine("An error occurred in the constructor: " + ex.GetType().Name + " - " + ex.Message);
+                throw; // Re-throw the exception to propagate it to the calling code
+            }
+
+
         }
 
         //A method that plays a sound if glasses are connected to the computer device.

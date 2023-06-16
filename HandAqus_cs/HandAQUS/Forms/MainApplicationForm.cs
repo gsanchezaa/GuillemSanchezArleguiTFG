@@ -866,7 +866,7 @@ Do you want to continue?",
                 this.pupilCore.WindowState = FormWindowState.Maximized;
             }
             this.pupilCore.Show();
-            this.pupilCore.TopMost = true;
+           // this.pupilCore.TopMost = true;
         }
 
     }

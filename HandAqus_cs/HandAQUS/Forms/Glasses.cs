@@ -39,7 +39,7 @@ namespace HandAQUS.Forms
                 this.pupilCore.WindowState = FormWindowState.Maximized;
             }
             this.pupilCore.Show();
-            this.pupilCore.TopMost = true;
+          //  this.pupilCore.TopMost = true;
         }
 
         private void Glasses_FormClosing(object sender, FormClosingEventArgs e)
